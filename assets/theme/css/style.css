@@ -959,3 +959,38 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
+header {
+  opacity: 0; /* initial opacity */
+  transition: opacity 0.5s; /* transition effect */
+}
+
+header.loaded {
+  opacity: 1; /* final opacity */
+}
+main {
+  transform: translateX(-100%); /* initial position */
+  transition: transform 0.5s; /* transition effect */
+}
+
+main.loaded {
+  transform: translateX(0); /* final position */
+}
+#titulo-animado {
+  font-size: 36px; /* tamaño de fuente original */
+  animation: animar-titulo 3s ease-in-out infinite; /* animación infinita */
+}
+
+@keyframes animar-titulo {
+  0% {
+    transform: scale(1); /* tamaño original */
+    color: #333; /* color original */
+  }
+  50% {
+    transform: scale(1.2); /* tamaño aumentado */
+    color: #666; /* color intermedio */
+  }
+  100% {
+    transform: scale(1); /* tamaño original */
+    color: #333; /* color original */
+  }
+}
