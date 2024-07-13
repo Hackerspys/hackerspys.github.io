@@ -994,3 +994,30 @@ main.loaded {
     color: #333; /* color original */
   }
 }
+#titulo-animado {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+h1.animated-title {
+  animation: shake 10s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
