@@ -1026,4 +1026,82 @@ h1.animated-title {
     transform: translateX(0);
   }
 }
+<style>
+    h4.icon-title {
+        background-color: #d8b3e4;
+        padding: 15px 40px; /* Increased padding for wider sides */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(158, 3, 3, 0.2);
+        color: #333333;
+        font-weight: bold;
+        max-width: 90%; /* Added max-width for improved responsiveness */
+        margin: 20px auto; /* Centered the element with margin auto */
+    }
+</style>
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
 
+h4, h5 {
+  margin-bottom: 1rem;
+}
+
+.icon-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+}
+
+.icon-text {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.step-number {
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.mbr-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.btn-secondary {
+  background-color: #3498db;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .icon-title {
+      font-size: 1.25rem;
+  }
+  .icon-text {
+      font-size: 0.9rem;
+  }
+  .step-number {
+      font-size: 1.5rem;
+  }
+}
