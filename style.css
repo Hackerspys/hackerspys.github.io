@@ -1127,3 +1127,26 @@ h1 {
 .cta-button:hover {
   background-color: #45a049; /* Color al pasar el ratón */
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.service {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 400px; /* Limitar el ancho en pantallas grandes */
+}
+h1, h2, h3 {
+  font-size: 1.5em; /* Ajustar según necesidad */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a, button {
+  padding: 10px 20px; /* Aumentar el área de clic */
+  font-size: 1em; /* Ajustar el tamaño */
+}
