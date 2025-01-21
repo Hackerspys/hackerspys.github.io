@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-
-<html>
-<head>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Protege tu Empresa con Servicios de Hacking Ético Profesional y Ciberseguridad</title>
+  
+  <!-- Fuentes y Estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <style>
     body {
       font-family: 'Roboto', sans-serif;
+      background-color: #f7fafc; /* Color de fondo más claro */
+      color: #2d3748; /* Color de texto más oscuro */
     }
 
     h1, h2 {
@@ -31,7 +38,7 @@
       transition: color 0.3s;
     }
 
-    /* Main Section */
+    /* Hero Section */
     .hero {
       background: url('https://source.unsplash.com/1600x900/?cybersecurity') no-repeat center center/cover;
       height: 100vh;
@@ -40,17 +47,33 @@
       justify-content: center;
       color: white;
       text-align: center;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
 
     .hero h1 {
       font-size: 4rem;
+      position: relative;
+      z-index: 2;
     }
+
     .cta-button {
       background-color: #f97316;
       color: white;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 2;
     }
 
     .cta-button:hover {
@@ -84,11 +107,11 @@
       border-radius: 12px;
       color: white;
       text-align: center;
+      transition: transform 0.3s ease-in-out;
     }
 
     .service-card:hover {
       transform: scale(1.05);
-      transition: transform 0.3s ease-in-out;
     }
 
     .testimonials {
@@ -98,6 +121,7 @@
   </style>
 </head>
 
+<body>
 <link href="assets/images/mbr.png" rel="shortcut icon" type="image/x-icon"/>
 <link href="https://hackerspys.github.io/" rel="canonical"/>
 <meta content="Servicios avanzados de seguridad informática y hacking ético. Protégete contra ciberamenazas con el equipo de Shield Cyber Fortress. Más de 10 años de experiencia en el mercado." name="description"/>
@@ -123,7 +147,6 @@
 <meta content="Imagen de un hacker ético trabajando en una computadora" itemprop="image.alt"/>
 <link href="https://fonts.googleapis.com/css?family=Font+Awesome" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-</link></head>
 
 <body class="bg-gray-100 text-gray-800">
 
@@ -141,48 +164,39 @@
     <a href="#contacts3-n" class="cta-button">Contáctanos</a>
   </div>
 </nav>
-  <!-- Hero Section -->
-<section class="hero">
-  <!-- Incluye Google Fonts en la sección <head> de tu HTML -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<div>
-  <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: black;">
-      Protege tu Empresa con Servicios de Hacking Ético Profesional y Ciberseguridad
-  </h1>
-  <p style="margin-top: 1rem; font-size: 1.25rem; line-height: 1.5; font-family: 'Poppins', sans-serif; font-weight: 300; color: black;">
-      Transforma la seguridad de tu negocio: nuestros expertos en consultoría y auditoría informática,
-  </p>
-  <p style="margin-top: 1rem; font-size: 1.25rem; line-height: 1.5; font-family: 'Poppins', sans-serif; font-weight: 300; color: black;">
-      no solo protegen tu infraestructura y activos digitales, sino que también utilizan
-  </p>
-  <p style="margin-top: 1rem; font-size: 1.25rem; line-height: 1.5; font-family: 'Poppins', sans-serif; font-weight: 300; color: black;">
-      hacking ético para descubrir y eliminar vulnerabilidades antes de que se conviertan en
-  </p>
-  <p style="margin-top: 1rem; font-size: 1.25rem; line-height: 1.5; font-family: 'Poppins', sans-serif; font-weight: 300; color: black;">
-      amenazas. ¡Asegura tu futuro digital con nosotros!
-  </p>
-  <a href="https://hackerspys.github.io/signup/index.html" target="_blank" class="cta-button" style="margin-top: 3rem; display: inline-block; color: black; text-decoration: none; padding: 10px 20px; background-color: #007BFF; border-radius: 5px; text-align: center;" >Solicita una consulta gratuita</a>
-</div>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">Protege tu Empresa con Servicios de Hacking Ético Profesional y Ciberseguridad</h1>
+    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+      Transforma la seguridad de tu negocio: nuestros expertos en consultoría y auditoría informática no solo protegen tu infraestructura y activos digitales, sino que también utilizan hacking ético para descubrir y eliminar vulnerabilidades antes de que se conviertan en amenazas. ¡Asegura tu futuro digital con nosotros!
+    </p>
+    <a href="https://hackerspys.github.io/signup/index.html" target="_blank" class="cta-button text-lg px-8 py-3">Solicita una consulta gratuita</a>
+  </div>
 </section>
-  <!-- Services Section -->
-  <section id="services" class="container">
-    <h2 class="text-4xl font-bold mb-8">Nuestros Servicios</h2>
-    <div class="services-section">
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold">Auditorías de Seguridad</h3>
-        <p class="mt-2">Identificamos vulnerabilidades críticas en tus sistemas para prevenir ataques.</p>
-      </div>
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold">Pruebas de Penetración</h3>
-        <p class="mt-2">Simulamos ataques reales para evaluar la seguridad de tu infraestructura.</p>
-      </div>
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold">Consultoría en Ciberseguridad</h3>
-        <p class="mt-2">Diseñamos estrategias personalizadas para proteger tus datos y redes.</p>
-      </div>
+
+</body>
+</html>
+<!-- Services Section -->
+<section id="services" class="container">
+  <h2 class="text-4xl font-bold mb-8">Nuestros Servicios</h2>
+  <div class="services-section">
+    <div class="service-card">
+      <h3 class="text-2xl font-semibold">Auditorías de Seguridad</h3>
+      <p class="mt-2">Identificamos vulnerabilidades críticas en tus sistemas para prevenir ataques.</p>
     </div>
-  </section>
+    <div class="service-card">
+      <h3 class="text-2xl font-semibold">Pruebas de Penetración</h3>
+      <p class="mt-2">Simulamos ataques reales para evaluar la seguridad de tu infraestructura.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="text-2xl font-semibold">Consultoría en Ciberseguridad</h3>
+      <p class="mt-2">Diseñamos estrategias personalizadas para proteger tus datos y redes.</p>
+    </div>
+  </div>
+</section>
 
 <div class="row pt-5 justify-content-center">
 <div class="col-12 col-md-6 col-lg-3">
@@ -320,38 +334,43 @@
 </div>
 </div>
 </section>
+
 <section class="features18 cid-sFGGxz3b6J" data-bs-version="5.1" id="features19-a">
-<div class="container">
-<div class="row justify-content-center">
-<div class="card col-12 col-lg">
-<div class="card-wrapper">
-<h6 class="card-title mbr-fonts-style mb-4 display-2"><strong>Sobre nosotros</strong></h6>
-<p class="mbr-text mbr-fonts-style display-7" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>¿Siente que su privacidad e información personal están en riesgo en el mundo digital? No está solo.
-                        <br/>
-<br/>Durante más de 10 años hemos ayudado con éxito a muchas personas como usted a recuperar el control de su vida digital.
-                        <br/>
-<br/>Somos expertos en hacking ético y seguridad informática, capacitados para brindarle soluciones confidenciales y efectivas ante cualquier amenaza o intrusión a su intimidad digital.
-                        <br/><br/>No ponga en riesgo su reputación, finanzas y valioso capital digital. Cuente con nosotros para auditar la seguridad de su presencia online, detectar posibles vulnerabilidades y construir sólidas defensas digitales personalizadas.
-                        <br/>
-<br/>Recupere la tranquilidad en el mundo digital con la ayuda de expertos de confianza.  <br/>
-<br/><br/>Ponte en contacto con nostros<br/><br/></p>
-<div class="mbr-section-btn">
-<a class="btn btn-secondary display-4" href="https://wa.me/3174832132" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;' target="_blank">Contacto</a>
-</div>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-  <div class="image-wrapper" style="max-width: 600px; margin: auto; padding: 0;">
-    <img alt="Servicios de hacking ético y seguridad informática" src="assets/images/mbr-19.jpg" style="margin-bottom: 20px; width: 100%; height: auto; object-fit: cover;"/>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card col-12 col-lg">
+        <div class="card-wrapper">
+          <h6 class="card-title mbr-fonts-style mb-4 display-2"><strong>Sobre nosotros</strong></h6>
+          <p class="mbr-text mbr-fonts-style display-7" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>
+            ¿Siente que su privacidad e información personal están en riesgo en el mundo digital? No está solo.
+            <br/><br/>
+            Durante más de 10 años hemos ayudado con éxito a muchas personas como usted a recuperar el control de su vida digital.
+            <br/><br/>
+            Somos expertos en hacking ético y seguridad informática, capacitados para brindarle soluciones confidenciales y efectivas ante cualquier amenaza o intrusión a su intimidad digital.
+            <br/><br/>
+            No ponga en riesgo su reputación, finanzas y valioso capital digital. Cuente con nosotros para auditar la seguridad de su presencia online, detectar posibles vulnerabilidades y construir sólidas defensas digitales personalizadas.
+            <br/><br/>
+            Recupere la tranquilidad en el mundo digital con la ayuda de expertos de confianza.
+            <br/><br/>
+            Ponte en contacto con nosotros.
+          </p>
+          <div class="mbr-section-btn">
+            <a class="btn btn-secondary display-4" href="https://wa.me/3174832132" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;' target="_blank">Contacto</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="image-wrapper" style="max-width: 600px; margin: auto; padding: 0;">
+          <img alt="Servicios de hacking ético y seguridad informática" src="assets/images/mbr-19.jpg" style="margin-bottom: 20px; width: 100%; height: auto; object-fit: cover;" />
+        </div>
+        <a href="page5.html#testimonials2-d" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>
+          <button aria-label="Read More" style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
+        </a>
+      </div>
+    </div>
   </div>
-  <a href="page5.html#testimonials2-d" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>
-    <button aria-label="Read More" style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Read More</button>
-  </a>
-</div>
-</div>
-</div>
-</div>
 </section>
+
 <!-- Testimonials Section -->
 <section class="testimonials">
   <h2 class="text-5xl font-bold mb-12 text-center">Testimonios de Clientes Satisfechos</h2>
@@ -362,9 +381,9 @@
         <div class="testimonial">
           <p class="text-2xl mb-4">
             "Estuve en una situación muy difícil hace un tiempo. Mi teléfono estaba funcionando mal y tenía la sospecha de que alguien lo había hackeado. Como alguien que trabaja con el gobierno, sabía que tenía que tomármelo en serio. La idea de que mis datos personales se vieran comprometidos me quitaba el sueño.
-            <br/><br/> 
+            <br/><br/>
             Fue entonces cuando decidí ponerme en contacto con un equipo de hackers éticos para que me ayudaran. Desde el primer contacto, me impresionó su amabilidad y profesionalidad. Escucharon atentamente mis inquietudes y trabajaron incansablemente para resolver el problema. Todavía estoy agradecido por su ayuda, realmente me salvaron de una situación potencialmente desastrosa."
-            </p>
+          </p>
           <div class="d-flex mb-md-0 mb-4">
             <div class="image-wrapper">
               <img alt="Cliente satisfecho con el trabajo de seguridad informática" src="assets/images/mbr-20.jpg" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
@@ -380,7 +399,7 @@
       <div class="col-md-6 col-lg-4 mb-6">
         <div class="testimonial">
           <p class="text-2xl mb-4">
-            "Muy agradecido con ustedes por resolver exitosamente mi caso cuando nadie más pudo. Localizaron eficazmente a la persona que buscaba. 
+            "Muy agradecido con ustedes por resolver exitosamente mi caso cuando nadie más pudo. Localizaron eficazmente a la persona que buscaba.
             <br/><br/>
             Profesionales, hábiles y confidenciales. Superaron mis expectativas."
           </p>
@@ -396,21 +415,27 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4 mb-6">
-        <div class="testimonial">
-          <p class="text-2xl mb-4">
-            "Estaba muy preocupada por la relación con mi esposo. Todas sus acciones me hacían pensar que tuviera una amante. 
-            <br/><br/>
-            Fui a buscar ayuda y nunca he tomado una mejor decisión que esta. Descubrí lo que realmente estaba pasando, pude confirmar mis sospechas y confrontarlo fue lo más valiente que he hecho en mi vida."
-            <br/><strong>- Yeimi Giraldo</strong>
-          </p>
-          <div class="d-flex mb-md-0 mb-4">
-            <div class="image-wrapper">
-              <img alt="Cliente satisfecho con el trabajo de seguridad informática" src="assets/images/foto2.png" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
-            </div>
-            <div class="text-wrapper">
-              <p class="name mbr-fonts-style mb-1
-             
+<div class="col-md-6 col-lg-4 mb-6">
+  <div class="testimonial">
+    <p class="text-2xl mb-4">
+      "Estaba muy preocupada por la relación con mi esposo. Todas sus acciones me hacían pensar que tuviera una amante.
+      <br/><br/>
+      Fui a buscar ayuda y nunca he tomado una mejor decisión que esta. Descubrí lo que realmente estaba pasando, pude confirmar mis sospechas y confrontarlo fue lo más valiente que he hecho en mi vida."
+      <br/><strong></strong>
+    </p>
+    <div class="d-flex mb-md-0 mb-4">
+      <div class="image-wrapper">
+        <img alt="Cliente satisfecho con el trabajo de seguridad informática" src="assets/images/foto2.png" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
+      </div>
+      <div class="text-wrapper">
+        <p class="name mbr-fonts-style mb-1 text-3xl"><strong>Yeimi Giraldo</strong></p>
+        <p class="position mbr-fonts-style text-xl"><strong>Cliente</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="container">
   <h2 class="text-4xl font-bold mb-8">Contáctanos</h2>
@@ -471,9 +496,11 @@
 <p style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>Este es el contenido principal de la página.</p>
 <p style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>Aquí puede haber más información o secciones.</p>
 </main>
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Shield Cyber Fortress. Todos los derechos reservados.</p>
-    <a href="#" class="text-orange-500">Política de Privacidad</a> | <a href="#" class="text-orange-500">Términos y Condiciones</a>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Shield Cyber Fortress. Todos los derechos reservados.</p>
+  <a href="#" class="text-orange-500">Política de Privacidad</a> | <a href="#" class="text-orange-500">Términos y Condiciones</a>
+</footer>
+
+</body>
 </html>

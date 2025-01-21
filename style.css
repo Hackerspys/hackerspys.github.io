@@ -1052,20 +1052,9 @@ h1.animated-title {
     transform: scale(1);
   }
 }
+
 .hero {
-  background: url('https://source.unsplash.com/1600x900/?cybersecurity') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 2rem; /* add some padding to make it more prominent */
-  border-radius: 10px; /* add a subtle border radius to make it more rounded */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* add a subtle shadow effect to make it more prominent */
-}
-.hero {
-  background: url('https://source.unsplash.com/1600x900/?cybersecurity') no-repeat center center/cover;
+  background: url('\assets\images\Ciberseguridad.jpg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -1123,7 +1112,24 @@ h1 {
   display: inline-block; /* Comportamiento en línea */
   transition: background-color 0.3s ease; /* Transición suave */
 }
+.hero h1 {
+  font-size: 4rem;
+  background: linear-gradient(to right, #f97316, #ea580c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  animation: pulse 2s infinite;
+  z-index: 1; /* Asegúrate de que el texto esté por encima del fondo */
+}
 
-.cta-button:hover {
-  background-color: #45a049; /* Color al pasar el ratón */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

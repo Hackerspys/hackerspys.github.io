@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad MAXIMizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left {
+            background-color: #FF7F00;
+            color: white;
+            width: 50%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        .register-buttons {
+            display: flex;
+            flex-direction: column;
+        }
+        .register-buttons button {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+        .email-signup {
+            margin-top: 20px;
+        }
+        input {
+            padding: 15px;
+            width: 100%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .continue-button {
+            background-color: #FFD700;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .policy {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left section -->
+        <div class="left">
+            <img src="mbr-21" alt="UnderDefense Logo" style="width: 150px;">
+            <h1>Ciberseguridad MAXIMizada</h1>
+            <p>Al alcance de tu mano</p>
+            <ul>
+                <li>✔ Visibilidad completa de la postura de seguridad</li>
+                <li>✔ Integración perfecta con las principales herramientas</li>
+                <li>✔ Servicio de consejería MDR 24x7</li>
+                <li>✔ Inteligencia de amenazas e IR automatizado</li>
+                <li>✔ Análisis de riesgos externos</li>
+            </ul>
+        </div>
+        <!-- Right section -->
+        <div class="right">
+            <h2>Crea tu cuenta gratuita</h2>
+            <div class="register-buttons">
+                <button aria-label="Regístrate en Google">Regístrate en Google</button>
+                <button aria-label="Regístrate con Microsoft">Regístrate con Microsoft</button>
+
+            </div>
+            <div class="email-signup">
+                <p>o regístrate con tu correo electrónico</p>
+                <input type="email" placeholder="Correo electrónico empresarial">
+                <button class="continue-button">Continuar</button>
+                <p class="policy">
+                    Al crear una cuenta, usted acepta nuestra <a href="#">Política de privacidad</a>.
+                </p>
+                <p><a href="#">¿Ya tienes una cuenta? Inicia sesión</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
