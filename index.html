@@ -64,6 +64,30 @@
       font-size: 4rem;
       position: relative;
       z-index: 2;
+      animation: fadeInUp 1s ease-in-out, bounce 1s infinite;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
     }
 
     .cta-button {
@@ -168,17 +192,13 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-overlay"></div>
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6">Protege tu Empresa con Servicios de Hacking Ético Profesional y Ciberseguridad</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-      Transforma la seguridad de tu negocio: nuestros expertos en consultoría y auditoría informática no solo protegen tu infraestructura y activos digitales, sino que también utilizan hacking ético para descubrir y eliminar vulnerabilidades antes de que se conviertan en amenazas. ¡Asegura tu futuro digital con nosotros!
-    </p>
-    <a href="https://hackerspys.github.io/signup/index.html" target="_blank" class="cta-button text-lg px-8 py-3">Solicita una consulta gratuita</a>
+  <div>
+    <h1>Protege tu Empresa con Servicios de Hacking Ético Profesional y Ciberseguridad</h1>
+    <p class="mt-4 text-lg">Transforma la seguridad de tu negocio: nuestros expertos en consultoría y auditoría informática, no solo protegen tu infraestructura y activos digitales, sino que también utilizan hacking ético para descubrir y eliminar vulnerabilidades antes de que se conviertan en amenazas. ¡Asegura tu futuro digital con nosotros!</p>
+    <a href="https://hackerspys.github.io/signup/index.html" target="_blank" class="cta-button mt-6">Solicita una consulta gratuita</a>
   </div>
 </section>
 
-</body>
-</html>
 <!-- Services Section -->
 <section id="services" class="container">
   <h2 class="text-4xl font-bold mb-8">Nuestros Servicios</h2>
@@ -442,6 +462,7 @@
   <p class="text-xl mb-4">Obtén una consulta gratuita para identificar brechas críticas en tu sistema.</p>
   <a href="mailto:Jefconsultantshield@gmail.com" class="cta-button">Contáctanos por email</a>
 </section>
+
 <section class="contacts3 map1 cid-tKvCtohMlM" data-bs-version="5.1" id="contacts3-n">
 <div class="container">
 <div class="mbr-section-head">
