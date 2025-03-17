@@ -61,3 +61,67 @@ d)});v&&g(a).carousel({keyboard:!1})});a.addEventListener("slid.bs.carousel",fun
 datepicker:!1})}))})}document.querySelectorAll('input[type="range"]').forEach(function(a){a.addEventListener("change",function(a){a.target.parents(".form-group").forEach(function(b){b.querySelector(".value").innerHTML=a.target.value})})});if(m)g(document).on("add.cards changeParameter.cards",function(a,b){"undefined"!==typeof CircularProgressBar&&new CircularProgressBar("pie_progress");b?G(a.target,b):a.target.querySelectorAll(".pie_progress").length&&a.target.querySelectorAll(".pie_progress").forEach(function(a){D(a)})});
 else document.querySelectorAll(".pie_progress").length&&("undefined"!==typeof CircularProgressBar&&new CircularProgressBar("pie_progress"),document.querySelectorAll(".pie_progress").forEach(function(a){D(a)}));if(m&&v)g(document).on("add.cards",function(a){g(a.target).hasClass("testimonials-slider")&&y(a.target)}).on("changeParameter.cards",function(a,b,e){"testimonialsSlides"===b&&0==g(a.target).find(".carousel-item.active").length&&B(a.target)});else"undefined"===typeof window.initTestimonialsPlugin&&
 (window.initTestimonialsPlugin=!0,document.querySelectorAll(".testimonials-slider").forEach(function(a){y(a)}));k(function(){m||Array.from(document.body.children).filter(function(a){return!a.matches("style, script")}).forEach(function(a){if(window.Event&&"function"===typeof window.Event)var b=new Event("add.cards");else b=document.createEvent("CustomEvent"),b.initEvent("add.cards",!0,!0);a.dispatchEvent(b)})})})();document.getElementsByTagName("body")[0].setAttribute("style","z-index: 0");!function(){try{document.getElementsById("top-1")[0].getElementsByTagName("a")[0].removeAttribute("rel")}catch(b){}if(!document.getElementById("top-1")){var a=document.createElement("section");a.id="top-1";a.style="display: none";a.innerHTML='<a href="https://mobirise.com/builder/no-code-website-builder.html">no code website builder</a> Mobirise v5.8.14 <a href="https://mobirise.com/instagram-feed/">embedded instagram</a>';document.body.insertBefore(a,document.body.childNodes[0])}}();
+<!-- Pie de Página -->
+    <footer style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out; background-color: #333; color: #fff; padding: 1rem 0; text-align: center;'>
+      ... (your footer content) ...
+    </footer>
+
+    <!-- Contact Form Modal (ADD THE MODAL HTML HERE) -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        ... (modal HTML code from above) ...
+    </div>
+
+    <!-- JavaScript Code (ADD THE JAVASCRIPT CODE HERE) -->
+    <script>
+        // JavaScript to handle modal and form submission
+        document.addEventListener("DOMContentLoaded", function () {
+           ... (JavaScript code from the previous response) ...
+        });
+    </script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const contactButton = document.querySelector(".cta-button"); // Corrected selector
+    const contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
+    const contactForm = document.getElementById('contactForm');
+    const url = 'https://formsubmit.co/ajax/contacto@checkhaking.com';
+
+    contactButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        contactModal.show(); // Show the modal
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); //Prevent Default submit behavior
+
+        let formData = new FormData(contactForm);
+        let object = {};
+        formData.forEach((value, key) => {
+            object[key] = value
+        });
+        let json = JSON.stringify(object);
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+
+            const data = await response.json();
+
+            if (response.status == 200) {
+                contactForm.reset(); //Clear Form
+                alert(data.message); //Show message to the user
+                contactModal.hide();//hide modal once everything is executed
+            } else {
+                alert('Ocurrió un error, por favor intenta nuevamente'); //Error to the user
+            }
+        } catch (e) {
+            console.log(e); //Display error on console
+        }
+    });
+});
