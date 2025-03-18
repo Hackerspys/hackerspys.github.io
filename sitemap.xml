@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://hackerspys.github.io/</loc>
-    <lastmod>2024-10-27</lastmod>  <!-- Replace with the actual last modified date of your homepage -->
+    <lastmod>2025-03-15</lastmod>  <!-- Replace with the actual last modified date of your homepage -->
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,28 +24,28 @@
 
    <url>
     <loc>https://hackerspys.github.io/#testimonials</loc>
-    <lastmod>2024-10-27</lastmod>  <!-- Replace with the actual last modified date of your index page -->
+    <lastmod>2025-03-15</lastmod>  <!-- Replace with the actual last modified date of your index page -->
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://hackerspys.github.io/#contact</loc>
-    <lastmod>2024-10-27</lastmod> <!-- Replace with the actual last modified date of your index page -->
+    <lastmod>2025-03-15</lastmod> <!-- Replace with the actual last modified date of your index page -->
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://hackerspys.github.io/signup/index.html</loc>
-    <lastmod>2024-10-27</lastmod>   <!-- Replace with the actual last modified date of your signup page -->
+    <lastmod>2025-03-15</lastmod>   <!-- Replace with the actual last modified date of your signup page -->
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://hackerspys.github.io/page5.html#testimonials2-d</loc>
-    <lastmod>2024-10-27</lastmod> <!-- Replace with the actual last modified date of your testimonials page -->
+    <lastmod>2025-03-15</lastmod> <!-- Replace with the actual last modified date of your testimonials page -->
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
