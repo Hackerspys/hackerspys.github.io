@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://hackerspys.github.io/</loc>
-    <lastmod>2025-03-15</lastmod>  <!-- Replace with the actual last modified date of your homepage -->
+    <lastmod>2024-03-18</lastmod> <!-- Fecha actual o última real modificación -->
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://hackerspys.github.io/#services</loc>
-    <lastmod>2024-10-27</lastmod>  <!-- Replace with the actual last modified date of your index page -->
+    <loc>https://hackerspys.github.io/hacking-etico-avanzado.html</loc>
+    <lastmod>2024-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hackerspys.github.io/experiencia-comprobada.html</loc>
+    <lastmod>2024-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://hackerspys.github.io/#about</loc>
-    <lastmod>2024-10-27</lastmod>  <!-- Replace with the actual last modified date of your index page -->
+    <loc>https://hackerspys.github.io/resultados-medibles.html</loc>
+    <lastmod>2024-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-   <url>
-    <loc>https://hackerspys.github.io/#testimonials</loc>
-    <lastmod>2025-03-15</lastmod>  <!-- Replace with the actual last modified date of your index page -->
+  <url>
+    <loc>https://hackerspys.github.io/soluciones-personalizadas.html</loc>
+    <lastmod>2024-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://hackerspys.github.io/#contact</loc>
-    <lastmod>2025-03-15</lastmod> <!-- Replace with the actual last modified date of your index page -->
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hackerspys.github.io/signup/index.html</loc>
-    <lastmod>2025-03-15</lastmod>   <!-- Replace with the actual last modified date of your signup page -->
+    <loc>https://hackerspys.github.io/formulario.html</loc>
+    <lastmod>2024-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <!-- Si page5.html es importante y tiene nombre descriptivo:
   <url>
-    <loc>https://hackerspys.github.io/page5.html#testimonials2-d</loc>
-    <lastmod>2025-03-15</lastmod> <!-- Replace with the actual last modified date of your testimonials page -->
+    <loc>https://hackerspys.github.io/nombre-descriptivo-page5.html</loc>
+    <lastmod>2024-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
+  -->
+  <!-- Si signup/index.html es para SEO:
+  <url>
+    <loc>https://hackerspys.github.io/signup/index.html</loc>
+    <lastmod>2024-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  -->
 </urlset>
