@@ -19,8 +19,8 @@
     <meta property="og:title" content="Hacking Ético y Ciberseguridad | Shield Cyber Fortress - Protege tu Empresa">
     <meta property="og:description"
         content="Servicios de hacking ético profesional y ciberseguridad para empresas. Protege tu negocio con Shield Cyber Fortress. Auditorías, pruebas de penetración, consultoría y más.">
-    <meta property="og:image" content="assets/images/hero-image.jpg">
-    <!-- Replace with a relevant image -->
+    <meta property="og:image" content="https://hackerspys.github.io/assets/images/hero-image.jpg"> <!-- URL Absoluta -->
+    <meta property="og:site_name" content="Shield Cyber Fortress">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -28,9 +28,9 @@
     <meta property="twitter:title" content="Hacking Ético y Ciberseguridad | Shield Cyber Fortress - Protege tu Empresa">
     <meta property="twitter:description"
         content="Servicios de hacking ético profesional y ciberseguridad para empresas. Protege tu negocio con Shield Cyber Fortress. Auditorías, pruebas de penetración, consultoría y más.">
-    <meta property="twitter:image" content="assets/images/hero-image.jpg"> <!-- Replace with a relevant image -->
+    <meta property="twitter:image" content="https://hackerspys.github.io/assets/images/hero-image.jpg"> <!-- URL Absoluta -->
 
-    <!-- Fonts and Styles -->
+    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,544 +39,254 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                'poppins': ['Poppins', 'sans-serif'],
+                'roboto': ['Roboto', 'sans-serif'],
+              },
+              colors: {
+                orange: {
+                  500: '#f97316',
+                  600: '#ea580c',
+                }
+              }
+            }
+          }
+        }
+      </script>
 
     <style>
-        /* Tailwind Directives (Optional, but good practice) */
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-
-        /* Custom Styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7fafc;
-            color: #2d3748;
-            line-height: 1.6;
-            padding-top: 80px; /* Añadido para evitar la superposición de la navbar */
+            padding-top: 80px;
+            scroll-behavior: smooth;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            color: #1a202c;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .navbar-custom {
             background-color: rgba(0, 0, 0, 0.9);
             transition: background-color 0.3s ease;
-            padding: 1rem 2rem;
         }
-
-        .navbar a {
-            color: white;
-            transition: color 0.3s;
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-image.jpg') no-repeat center center/cover;
+            overflow: visible;
         }
-
-        .navbar a:hover {
-            color: #f97316;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/hero-image.jpg') no-repeat center center/cover;
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-            padding: 2rem;
-            overflow: visible; /* Evita que el contenido se corte */
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease-in-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease-in-out 0.2s;
-        }
+        .hero-section h1 { color: white; }
 
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-in-out forwards; } /* Added 'forwards' to keep state */
+        .animate-fadeInUp-delayed { animation: fadeInUp 1s ease-in-out 0.2s forwards; } /* Added 'forwards' */
 
-        .cta-button {
-            background-color: #f97316;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        .cta-button:hover {
-            background-color: #ea580c;
-            transform: scale(1.05);
-        }
-
+        .cta-button-animated { animation: pulse 2s infinite; }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
+        .service-card-custom:hover { transform: translateY(-5px); }
+        .testimonial-card-custom:hover { transform: translateY(-3px); }
 
-        /* General */
-        .container {
-            padding: 3rem 1rem;
-            text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
+        .contact-section-title-custom {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #003366;
         }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2d3748;
+        .contact-section-text-custom, .contact-section-text-custom a {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
-
-        /* Services Section */
-        .services-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        .service-card {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            color: #2d3748;
-            text-align: center;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .service-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: #1a202c;
-        }
-
-        .service-card p {
-            font-size: 1rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: #edf2f7;
-            padding: 4rem 0;
-        }
-
-        .testimonial {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-3px);
-        }
-
-        .testimonial p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .testimonial .name {
-            font-weight: 600;
-            color: #1a202c;
-        }
-
-        .testimonial .position {
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a202c;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #cbd5e0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #f97316;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin: 0 0.5rem;
-            color: #fff;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #f97316;
-        }
-
-        /* Larger screens */
-        @media (min-width: 768px) {
-            .hero h1 { font-size: 4rem; }
-        }
-
-        @media (min-width: 1200px) {
-            .container { padding: 4rem 2rem; }
-        }
-
-        .h4-background {
-            background-color: #ff9800;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        /* Mobirise Contact Section Styling */
-        .contacts3 {
-            position: relative;
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            background-color: #f8fafc;
-        }
-
-        .contacts3 .mbr-section-head {
-            margin-bottom: 3rem;
-        }
-
-        .contacts3 .card {
-            background-color: #f0fdf4;
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contacts3 .card-wrapper {
-            display: flex;
-            align-items: center;
-        }
-
-        .contacts3 .image-wrapper {
-            margin-right: 1.5rem;
-        }
-
-        .contacts3 .mbr-iconfont {
-            font-size: 2.5rem;
-            color: #34d399;
-        }
-
-        .contacts3 .text-wrapper {
-            text-align: left;
-        }
-
-        .contacts3 .card-title {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #0f172a;
-        }
-
-        .contacts3 .mbr-text {
-            color: #334155;
-        }
-
-        .contacts3 .map-wrapper {
-            position: relative;
-        }
-
-        .contacts3 .google-map {
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .contacts3 .google-map iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .contact-section-text-custom a { color: #007bff; transition: all 0.3s ease-in-out; }
+        .contact-section-text-custom a:hover { text-decoration: underline; }
+        .contact-card-custom { background-color: #f0fdf4; }
+        .contact-icon-custom { font-size: 2.5rem; }
+        .contact-icon-whatsapp { color: #25D366; }
+        .contact-icon-email { color: #003366; }
 
         @media (max-width: 767px) {
-            .contacts3 .card-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contacts3 .image-wrapper {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-
-            .contacts3 .mbr-iconfont {
-                font-size: 2rem;
-            }
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-        }
-
-        .mbr-section-title {
-            color: #003366;
-        }
-
-        .card {
-            background-color: #f0fdf4;
-            border: none;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .card-wrapper {
-            display: flex;
-            align-items: center;
-        }
-
-        .image-wrapper {
-            margin-right: 15px;
-        }
-
-        .image-wrapper img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .text-wrapper {
-            text-align: left;
-        }
-
-        .card-title {
-            color: #003366;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .mbr-text a {
-            color: #007bff;
+            .contact-card-wrapper-responsive { flex-direction: column; text-align: center; }
+            .contact-icon-wrapper-responsive { margin-right: 0; margin-bottom: 1rem; }
+            .contact-text-wrapper-responsive { text-align: center; }
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
 
     <!-- Navbar -->
-    <nav class="navbar flex items-center justify-between py-4 px-6">
-        <div class="text-white">
-            <a href="#" class="text-2xl font-bold">Shield Cyber Fortress</a>
+    <nav class="navbar-custom fixed top-0 left-0 w-full z-50 flex items-center justify-between py-4 px-6 md:px-10">
+        <div>
+            <a href="#" class="text-2xl font-bold text-white">Shield Cyber Fortress</a>
         </div>
-        <ul class="flex space-x-6">
-            <li><a href="#about" class="hover:text-orange-500">Acerca</a></li>
-            <li><a href="#services" class="hover:text-orange-500">Servicios</a></li>
-            <li><a href="#testimonials" class="hover:text-orange-500">Testimonios</a></li>
-            <li><a href="#contact" class="hover:text-orange-500">Contacto</a></li>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#about" class="text-white hover:text-orange-500">Acerca</a></li>
+            <li><a href="#services" class="text-white hover:text-orange-500">Servicios</a></li>
+            <li><a href="#testimonials" class="text-white hover:text-orange-500">Testimonios</a></li>
+            <li><a href="#contact" class="text-white hover:text-orange-500">Contacto</a></li>
         </ul>
         <div>
-            <a href="#contact" class="cta-button">Contáctanos</a>
+            <a href="#" class="cta-button-animated bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium" data-bs-toggle="modal" data-bs-target="#contactModal">Contáctanos</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
         </div>
     </nav>
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[72px] left-0 w-full bg-black bg-opacity-90 z-40">
+        <ul class="flex flex-col items-center space-y-4 py-4">
+            <li><a href="#about" class="text-white hover:text-orange-500 mobile-nav-link">Acerca</a></li>
+            <li><a href="#services" class="text-white hover:text-orange-500 mobile-nav-link">Servicios</a></li>
+            <li><a href="#testimonials" class="text-white hover:text-orange-500 mobile-nav-link">Testimonios</a></li>
+            <li><a href="#contact" class="text-white hover:text-orange-500 mobile-nav-link">Contacto</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>
-                    <span>Protege Tu Empresa con Hacking Ético y</span>
-                    <span>Ciberseguridad Profesional</span>
-                </h1>
-                <p class="mt-4 text-lg">
-                    Transforma la seguridad de tu negocio con nuestros expertos en <strong>consultoría de ciberseguridad</strong> y
-                    <strong>auditoría informática</strong>. Descubrimos y eliminamos <strong>vulnerabilidades de seguridad</strong> antes de que se conviertan en <strong>amenazas cibernéticas</strong>.
-                    ¡Asegura tu <strong>futuro digital</strong> con nosotros! Ofrecemos soluciones personalizadas para la <strong>seguridad informática de tu empresa</strong>.
-                </p>
-                <a href="formulario.html" class="cta-button mt-6" target="_blank">Solicita una Consulta Gratuita</a>
+    <section class="hero-section min-h-[85vh] flex items-center justify-center text-center text-white p-6 md:p-8">
+        <div class="max-w-3xl mx-auto">
+             
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate-fadeInUp">
+                <span>Protege Tu Empresa con Hacking Ético y</span><br class="sm:hidden">
+                <span>Ciberseguridad Profesional</span>
+            </h1>
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate-fadeInUp-delayed">
+                Transforma la seguridad de tu negocio con nuestros expertos en <strong>consultoría de ciberseguridad</strong> y
+                <strong>auditoría informática</strong>. Descubrimos y eliminamos <strong>vulnerabilidades de seguridad</strong> antes de que se conviertan en <strong>amenazas cibernéticas</strong>.
+                ¡Asegura tu <strong>futuro digital</strong> con nosotros!
+            </p>
+            <a href="formulario.html" class="cta-button-animated bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors text-lg font-semibold inline-block">Solicita una Consulta Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16">Servicios Especializados en Ciberseguridad y Hacking Ético</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-shield-alt fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Auditorías de Seguridad</h3>
+                    <p class="text-gray-700">Identificamos <strong>vulnerabilidades críticas</strong> y prevenimos <strong>ataques informáticos</strong>.</p>
+                </div>
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-search fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Pruebas de Penetración</h3>
+                    <p class="text-gray-700">Simulamos <strong>ataques reales</strong> para evaluar la <strong>seguridad de tu infraestructura</strong>.</p>
+                </div>
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-users fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Consultoría Especializada</h3>
+                    <p class="text-gray-700">Diseñamos <strong>estrategias de seguridad personalizadas</strong> para proteger tus datos.</p>
+                </div>
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-lock fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Protección de Datos</h3>
+                    <p class="text-gray-700">Aseguramos el <strong>cumplimiento normativo</strong> y la <strong>protección de datos</strong>.</p>
+                </div>
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-graduation-cap fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Formación y Concienciación</h3>
+                    <p class="text-gray-700">Fortalecemos la <strong>cultura de seguridad</strong> en tu organización.</p>
+                </div>
+                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
+                    <i class="fas fa-laptop-code fa-3x mb-4 text-orange-500"></i>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Análisis Forense Digital</h3>
+                    <p class="text-gray-700"><strong>Investigamos incidentes</strong> y definimos <strong>acciones de respuesta</strong>.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>    <!-- Services Section -->
-    <section id="services" class="container">
-        <h2 class="section-title">Servicios Especializados en Ciberseguridad y Hacking Ético</h2>
-        <div class="services-section">
-            <div class="service-card">
-    <i class="fas fa-shield-alt fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Auditorías de Seguridad Informática</h3>
-    <p class="mt-2">Realizamos <strong>auditorías de seguridad exhaustivas</strong> para identificar <strong>vulnerabilidades críticas</strong> en tus sistemas y prevenir <strong>ataques informáticos</strong>.</p>
-</div>
-<div class="service-card">
-    <i class="fas fa-search fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Pruebas de Penetración (Pentesting)</h3>
-    <p class="mt-2">Simulamos <strong>ataques cibernéticos reales</strong> mediante <strong>pruebas de penetración</strong> para evaluar la <strong>seguridad de tu infraestructura IT</strong> y redes.</p>
-</div>
-<div class="service-card">
-    <i class="fas fa-users fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Consultoría Especializada en Ciberseguridad Empresarial</h3>
-    <p class="mt-2">Nuestros <strong>consultores de ciberseguridad</strong> diseñan <strong>estrategias de seguridad personalizadas</strong> para proteger tus <strong>datos empresariales</strong> y redes contra <strong>ciberamenazas</strong>.</p>
-</div>
-<div class="service-card">
-    <i class="fas fa-lock fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Servicios de Protección de Datos y Cumplimiento Normativo</h3>
-    <p class="mt-2">Te ayudamos a implementar <strong>medidas de seguridad para la protección de datos</strong> y asegurar el <strong>cumplimiento con las regulaciones de protección de datos</strong> vigentes.</p>
-</div>
-<div class="service-card">
-    <i class="fas fa-graduation-cap fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Programas de Formación y Concienciación en Ciberseguridad</h3>
-    <p class="mt-2">Ofrecemos <strong>formación en ciberseguridad para empleados</strong> y <strong>programas de concienciación</strong> para fortalecer la <strong>cultura de seguridad</strong> en tu organización y <strong>prevenir ataques de ingeniería social</strong>.</p>
-</div>
-<div class="service-card">
-    <i class="fas fa-laptop-code fa-3x mb-3 text-orange-500"></i>
-    <h3 class="text-2xl font-semibold">Análisis Forense Digital e Investigación de Incidentes de Seguridad</h3>
-    <p class="mt-2">Realizamos <strong>análisis forense digital</strong> para <strong>investigar incidentes de seguridad</strong>, determinar la causa, el alcance y las <strong>acciones de respuesta ante incidentes</strong>.</p>
-</div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="container">
-        <h2 class="section-title">Acerca de Shield Cyber Fortress - Expertos en Ciberseguridad</h2>
-        <p class="mb-4">
-            En Shield Cyber Fortress, nos dedicamos a proteger tu negocio de las crecientes amenazas cibernéticas. Con
-            más de 10 años de experiencia, nuestro equipo de expertos en hacking ético y ciberseguridad ofrece
-            soluciones personalizadas para garantizar la seguridad de tu información y activos digitales.
-        </p>
-        <p>
-            Nuestra misión es proporcionar tranquilidad a nuestros clientes, ayudándoles a identificar y mitigar
-            riesgos, cumplir con las regulaciones de protección de datos y fortalecer su postura de seguridad en
-            general. Confía en nosotros para proteger tu futuro digital.
-        </p>
+    <section id="about" class="py-12 md:py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Acerca de Shield Cyber Fortress</h2>
+            <p class="text-lg text-gray-700 mb-4">
+                En Shield Cyber Fortress, nos dedicamos a proteger tu negocio de las crecientes amenazas cibernéticas. Con
+                más de 10 años de experiencia, nuestro equipo de expertos en hacking ético y ciberseguridad ofrece
+                soluciones personalizadas para garantizar la seguridad de tu información y activos digitales.
+            </p>
+            <p class="text-lg text-gray-700">
+                Nuestra misión es proporcionar tranquilidad, ayudándote a identificar y mitigar
+                riesgos, cumplir con regulaciones y fortalecer tu postura de seguridad.
+            </p>
+        </div>
     </section>
 
     <!-- Features Section -->
-    <section class="container">
-        <h2 class="section-title">¿Por qué Confiar en Shield Cyber Fortress para tu Ciberseguridad?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <i class="fas fa-shield-alt fa-3x text-orange-500 mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Experiencia Comprobada</h3>
-                <p class="text-gray-700">Más de 10 años protegiendo empresas como la tuya.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <i class="fas fa-user-secret fa-3x text-orange-500 mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Hacking Ético</h3>
-                <p class="text-gray-700">Identificamos vulnerabilidades antes que los atacantes.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <i class="fas fa-lock fa-3x text-orange-500 mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Soluciones Personalizadas</h3>
-                <p class="text-gray-700">Adaptamos nuestros servicios a tus necesidades específicas.</p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md">
-                <i class="fas fa-thumbs-up fa-3x text-orange-500 mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">Resultados Comprobados</h3>
-                <p class="text-gray-700">Clientes satisfechos y protegidos.</p>
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16">¿Por qué Confiar en Nosotros?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="fas fa-shield-alt fa-3x text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Experiencia Comprobada</h3>
+                    <p class="text-gray-700">Más de 10 años protegiendo empresas.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="fas fa-user-secret fa-3x text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hacking Ético</h3>
+                    <p class="text-gray-700">Identificamos vulnerabilidades proactivamente.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="fas fa-lock fa-3x text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Soluciones Personalizadas</h3>
+                    <p class="text-gray-700">Adaptadas a tus necesidades específicas.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <i class="fas fa-thumbs-up fa-3x text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Resultados Garantizados</h3>
+                    <p class="text-gray-700">Clientes satisfechos y protegidos.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2 class="section-title text-center">Testimonios de Clientes Satisfechas con Nuestros Servicios de Ciberseguridad</h2>
-        <p class="text-xl text-center mb-8">Nuestros clientes nos recomiendan por nuestra experiencia y profesionalidad
-            en seguridad informática</p>
-        <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Testimonio 1 -->
-                <div class="testimonial">
-                    <p class="mb-4">
-                        "Estuve en una situación muy difícil hace un tiempo. Mi teléfono estaba funcionando mal y tenía la
-                        sospecha de que alguien lo había hackeado. Como alguien que trabaja con el gobierno, sabía que
-                        tenía que tomármelo en serio. La idea de que mis datos personales se vieran comprometidos me quitaba el
-                        sueño. Fue entonces cuando decidí ponerme en contacto con un equipo de hackers éticos para que me
-                        ayudaran. Desde el primer contacto, me impresionó su amabilidad y profesionalidad. Escucharon
-                        atentamente mis inquietudes y trabajaron incansablemente para resolver el problema. Todavía estoy
-                        agradecido por su ayuda, realmente me salvaron de una situación potencialmente desastrosa."
+    <section id="testimonials" class="py-12 md:py-20 bg-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4">Testimonios de Clientes</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 md:mb-16 max-w-2xl mx-auto">Nuestros clientes nos recomiendan por nuestra experiencia y profesionalidad en seguridad informática.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        "Situación difícil con mi teléfono, sospechaba hackeo. Siendo trabajador gubernamental, era crítico. Contacté hackers éticos; su amabilidad y profesionalismo fueron notables. Resolvieron el problema y me salvaron de un desastre."
                     </p>
-                    <div class="flex items-center">
-                        <img loading="lazy" alt="Cliente satisfecho con servicios de ciberseguridad"
-                            src="assets/images/mbr-20.jpg" class="w-16 h-16 object-cover rounded-full mr-4">
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
+                        <img loading="lazy" alt="Carlos Aldana" src="assets/images/mbr-20.jpg" class="w-12 h-12 object-cover rounded-full mr-4">
                         <div>
-                            <p class="name text-lg font-semibold">Carlos Aldana</p>
-                            <p class="position text-sm">Cliente</p>
+                            <p class="font-semibold text-gray-900">Carlos Aldana</p>
+                            <p class="text-sm text-gray-600">Cliente</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonio 2 -->
-                <div class="testimonial">
-                    <p class="mb-4">
-                        "Muy agradecido con ustedes por resolver exitosamente mi caso cuando nadie más pudo. Localizaron
-                        eficazmente a la persona que buscaba. Profesionales, hábiles y confidenciales. Superaron mis
-                        expectativas."
+                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        "Muy agradecido, resolvieron mi caso cuando nadie más pudo. Localizaron a la persona eficazmente. Profesionales, hábiles y confidenciales. Superaron mis expectativas."
                     </p>
-                    <div class="flex items-center">
-                        <img loading="lazy" alt="Cliente satisfecho con servicios de hacking ético"
-                            src="assets/images/foto.png" class="w-16 h-16 object-cover rounded-full mr-4">
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
+                        <img loading="lazy" alt="Andrés Rincón" src="assets/images/foto.png" class="w-12 h-12 object-cover rounded-full mr-4">
                         <div>
-                            <p class="name text-lg font-semibold">Andrés Rincón</p>
-                            <p class="position text-sm">Cliente</p>
+                            <p class="font-semibold text-gray-900">Andrés Rincón</p>
+                            <p class="text-sm text-gray-600">Cliente</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonio 3 -->
-                <div class="testimonial">
-                    <p class="mb-4">
-                        "Estaba muy preocupada por la relación con mi esposo. Todas sus acciones me hacían pensar que
-                        tuviera una amante. Fui a buscar ayuda y nunca he tomado una mejor decisión que esta. Descubrí lo
-                        que realmente estaba pasando, pude confirmar mis sospechas y confrontarlo fue lo más valiente que
-                        he hecho en mi vida."
+                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
+                    <p class="text-gray-700 mb-4 flex-grow">
+                        "Preocupada por mi esposo, sospechaba infidelidad. Busqué ayuda y fue la mejor decisión. Descubrí la verdad, confirmé mis sospechas y confrontarlo fue un acto de valentía."
                     </p>
-                    <div class="flex items-center">
-                        <img loading="lazy" alt="Cliente satisfecho con servicios de investigación digital"
-                            src="assets/images/foto2.png" class="w-16 h-16 object-cover rounded-full mr-4">
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
+                        <img loading="lazy" alt="Yeimi Giraldo" src="assets/images/foto2.png" class="w-12 h-12 object-cover rounded-full mr-4">
                         <div>
-                            <p class="name text-lg font-semibold">Yeimi Giraldo</p>
-                            <p class="position text-sm">Cliente</p>
+                            <p class="font-semibold text-gray-900">Yeimi Giraldo</p>
+                            <p class="text-sm text-gray-600">Cliente</p>
                         </div>
                     </div>
                 </div>
@@ -585,64 +295,57 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contacts3 map1 cid-tKvCtohMlM" data-bs-version="5.1" id="contacts3-n">
-        <div class="container">
-            <div class="mbr-section-head">
-                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"
-                    style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>
-                    <strong>Contáctanos para una Consulta Gratuita de Ciberseguridad</strong>
+    <section id="contact" class="py-12 md:py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10 md:mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold contact-section-title-custom">
+                    <strong>Contáctanos para una Consulta Gratuita</strong>
                 </h3>
+                <p class="text-lg mt-2 contact-section-text-custom text-slate-600">
+                    Obtén una consulta gratuita para identificar brechas críticas en tu sistema.
+                </p>
             </div>
-            <p class="text-xl mb-4 text-center"
-                style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>
-                Obtén una consulta gratuita para identificar brechas críticas en tu sistema.</p>
-            <div class="row justify-content-center mt-4">
-                <!-- Información de Contacto -->
-                <div class="card col-12 col-md-6">
-                    <div class="card-wrapper d-flex align-items-center mb-4">
-                        <div class="image-wrapper mr-3">
-                            <a href="https://wa.me/3249583051" aria-label="Contactar por WhatsApp" target="_blank">
-                                <i class="fab fa-whatsapp" style="font-size: 24px; color: #25D366;"></i>
-                            </a>
+            <div class="flex flex-wrap justify-center -mx-4">
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+                    <div class="contact-card-custom shadow-lg rounded-lg p-6 h-full">
+                        <div class="contact-card-wrapper-responsive flex items-center mb-6">
+                            <div class="contact-icon-wrapper-responsive icon-wrapper mr-4">
+                                <a href="https://wa.me/3249583051" aria-label="Contactar por WhatsApp" target="_blank">
+                                    <i class="fab fa-whatsapp contact-icon-custom contact-icon-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div class="contact-text-wrapper-responsive text-content-wrapper">
+                                <h6 class="text-lg font-semibold text-slate-800 mb-1">
+                                    <strong>WhatsApp</strong>
+                                </h6>
+                                <p class="contact-section-text-custom text-slate-700">
+                                    <a href="https://wa.me/3249583051" target="_blank">+57 324 9 58 30 51</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="text-wrapper">
-                            <h6 class="card-title mbr-fonts-style mb-1 display-5">
-                                <strong>WhatsApp</strong>
-                            </h6>
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                <a href="https://wa.me/3249583051"
-                                    style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'
-                                    target="_blank">+57 324 9 58 30 51</a>
-                            </p>
+                        <div class="contact-card-wrapper-responsive flex items-center">
+                            <div class="contact-icon-wrapper-responsive icon-wrapper mr-4">
+                                <a href="mailto:info@shieldcyberfortress.com" aria-label="Enviar correo electrónico">
+                                    <i class="fas fa-envelope contact-icon-custom contact-icon-email"></i>
+                                </a>
+                            </div>
+                            <div class="contact-text-wrapper-responsive text-content-wrapper">
+                                <h6 class="text-lg font-semibold text-slate-800 mb-1">
+                                    <strong>Email</strong>
+                                </h6>
+                                <p class="contact-section-text-custom text-slate-700">
+                                    <a href="mailto:info@shieldcyberfortress.com">info@shieldcyberfortress.com</a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-wrapper d-flex align-items-center">
-                        <div class="image-wrapper mr-3">
-                            <span class="mbr-iconfont mobi-mbri-letter mobi-mbri"
-                                style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
-                        </div>
-                        <div class="card-wrapper d-flex align-items-center">
-    <div class="image-wrapper mr-3">
-        <span class="mbr-iconfont mobi-mbri-letter mobi-mbri"
-            style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
-    </div>
-    <div class="text-wrapper">
-        <h6 class="card-title mbr-fonts-style mb-1 display-5">
-            <strong>Email</strong>
-        </h6>
-        <p class="mbr-text mbr-fonts-style display-7">
-            <a href="mailto:info@shieldcyberfortress.com" style='font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; transition: all 0.3s ease-in-out;'>info@shieldcyberfortress.com</a>
-        </p>
-    </div>
-</div>
                     </div>
                 </div>
-                <!-- Mapa de Ubicación -->
-                <div class="map-wrapper col-12 col-md-6">
-                    <div aria-label="Mapa de nuestra ubicación" class="google-map">
-                        <iframe allowfullscreen="" frameborder="0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&q=Calle 23 No. 12-23"
-                            style="border:0"></iframe>
+                <div class="w-full md:w-1/2 lg:w-2/3 px-4">
+                    <div aria-label="Mapa de nuestra ubicación" class="h-[300px] md:h-full rounded-lg overflow-hidden shadow-lg">
+ 
+                        <iframe class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&q=Calle%2023%20No.%2012-23%20Bogota%20Colombia">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -650,55 +353,92 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container">
-            <p>© Copyright © 2024 Shield Cyber Fortress | Funciona con Shield Cyber Fortress</p>
-            <p>
-                <a href="#">Política de Privacidad</a> |
-                <a href="#">Términos y Condiciones</a>
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2 text-gray-400">© 2024 Shield Cyber Fortress. Todos los derechos reservados.</p>
+            <p class="mb-4 text-gray-400">
+                <a href="#" class="hover:text-orange-500">Política de Privacidad</a> |
+                <a href="#" class="hover:text-orange-500">Términos y Condiciones</a>
             </p>
-            <div class="social-icons">
-                <a href="https://wa.me/3249583051" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <!-- Add other social media links here -->
+            <div class="flex justify-center space-x-4">
+                <a href="https://wa.me/3249583051" aria-label="WhatsApp" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- Contact Form Modal -->
+    <!-- Contact Form Modal (Bootstrap 5) -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Contáctanos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-gray-800 text-white">
+                    <h5 class="modal-title font-poppins text-xl" id="contactModalLabel">Contáctanos</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body p-4">
                     <form id="contactForm">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <label for="name" class="form-label text-gray-700">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="Tu nombre">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="email" class="form-label text-gray-700">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="tu@email.com">
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Teléfono (Opcional)</label>
-                            <input type="tel" class="form-control" id="phone" name="phone">
+                            <label for="phone" class="form-label text-gray-700">Teléfono (Opcional)</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Tu número de teléfono">
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            <label for="message" class="form-label text-gray-700">Mensaje</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="¿Cómo podemos ayudarte?"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                            Enviar Mensaje
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
 
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+            if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Formulario enviado (simulación). Necesitarás un backend para procesar esto.');
+                const modalInstance = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                if (modalInstance) {
+                    modalInstance.hide();
+                }
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
 </html>
