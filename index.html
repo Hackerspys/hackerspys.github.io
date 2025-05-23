@@ -43,7 +43,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- Animate.css -->
+    <!-- Animate.css (Lo necesitarás si usas sus clases directamente) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Tailwind CSS -->
@@ -61,14 +61,6 @@
                   500: '#f97316',
                   600: '#ea580c',
                 }
-              },
-              // Para delays de Animate.css si quieres más control
-              animationDelay: { 
-                '0.2s': '0.2s',
-                '0.4s': '0.4s',
-                '0.6s': '0.6s',
-                '0.8s': '0.8s',
-                '1s': '1s',
               }
             }
           }
@@ -96,6 +88,7 @@
         }
         .hero-section h1 { color: white; }
 
+        /* Animaciones personalizadas como en tu original */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -114,77 +107,56 @@
             display: block; 
             text-decoration: none; 
             color: inherit; 
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
+        }
+        .service-card-custom {
+             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
         }
         .service-card-link:hover .service-card-custom { 
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); 
         }
-        .service-card-custom {
-             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
-        }
-
+        
         .testimonial-card-custom {
             background-color: #fff; 
-            border-radius: 1rem; 
+            border-radius: 0.75rem; 
             padding: 1.5rem; 
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
-            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative; 
-            overflow: hidden; 
-        }
-        .testimonial-card-custom:before { 
-            content: '\f10d'; 
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 3.5rem; 
-            color: #f97316; 
-            opacity: 0.15; 
-            position: absolute;
-            top: 0.5rem;
-            left: 0.75rem;
-            z-index: 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); 
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex; /* Clave para alinear contenido interno */
+            flex-direction: column; /* Apila elementos verticalmente */
+            height: 100%; /* Para que todas las tarjetas en una fila de la cuadrícula intenten tener la misma altura */
         }
         .testimonial-card-custom:hover { 
-            transform: translateY(-8px) scale(1.02); 
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.1); 
         }
         .testimonial-card-custom .testimonial-text {
-            font-size: 0.95rem; 
-            line-height: 1.6;
             color: #4b5563; 
-            margin-bottom: 1.5rem; 
-            flex-grow: 1;
-            position: relative; 
-            z-index: 1;
+            margin-bottom: 1rem; 
+            flex-grow: 1; /* Esto hace que el texto ocupe el espacio disponible, empujando client-info hacia abajo */
+            line-height: 1.6;
         }
         .testimonial-card-custom .client-info { 
-            margin-top: auto; 
+            margin-top: auto; /* Empuja esta sección al final de la tarjeta */
             padding-top: 1rem; 
             border-top: 1px solid #e5e7eb; 
             display: flex;
             align-items: center;
-            position: relative; 
-            z-index: 1;
         }
         .testimonial-card-custom .client-info img {
-            width: 3.5rem; 
-            height: 3.5rem; 
+            width: 3rem; 
+            height: 3rem; 
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 50%; 
             margin-right: 1rem; 
-            border: 2px solid #f97316; 
         }
         .testimonial-card-custom .client-name {
             font-weight: 600; 
             color: #1f2937; 
-            font-size: 1.05rem;
         }
         .testimonial-card-custom .client-position {
-            font-size: 0.85rem; 
-            color: #f97316; 
+            font-size: 0.875rem; 
+            color: #6b7280; 
         }
 
         .contact-section-title-custom {
@@ -206,15 +178,15 @@
             .contact-icon-wrapper-responsive { margin-right: 0; margin-bottom: 1rem; }
             .contact-text-wrapper-responsive { text-align: center; }
         }
-        /* Clases de delay de Animate.css para Tailwind JIT (si no las genera por defecto) */
+        /* Clases de delay para Animate.css (si se usan) */
         .animate__delay-0\.2s { animation-delay: 0.2s; }
         .animate__delay-0\.4s { animation-delay: 0.4s; }
-        .animate__delay-0\.5s { animation-delay: 0.5s; } /* Para el párrafo del título de la sección */
+        .animate__delay-0\.5s { animation-delay: 0.5s; } /* Para el párrafo del título de la sección Hero */
         .animate__delay-0\.6s { animation-delay: 0.6s; }
         .animate__delay-0\.8s { animation-delay: 0.8s; }
         .animate__delay-1s { animation-delay: 1s; }
-
-
+        .animate__delay-1\.2s { animation-delay: 1.2s; }
+        .animate__delay-1\.4s { animation-delay: 1.4s; }
     </style>
     
     <script type="application/ld+json">
@@ -301,28 +273,30 @@
 
     <section class="hero-section min-h-[85vh] flex items-center justify-center text-center text-white p-6 md:p-8" aria-labelledby="main-hero-title">
         <div class="max-w-3xl mx-auto">
-            <h1 id="main-hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate__animated animate__fadeInUp">
+ 
+            <h1 id="main-hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate-fadeInUp">
                 <span>Hacking Ético y Ciberseguridad</span><br class="sm:hidden">
                 <span>Profesional para tu Empresa</span>
             </h1>
-            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate__animated animate__fadeInUp-delayed">
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate-fadeInUp-delayed">
                 En Shield Cyber Fortress, transformamos la seguridad de tu negocio. Con nuestros expertos en <strong>hacking ético para empresas</strong> y <strong>consultoría de ciberseguridad avanzada</strong>,
                 descubrimos y neutralizamos <strong>vulnerabilidades críticas</strong> antes de que se conviertan en costosas <strong>amenazas cibernéticas</strong>.
                 ¡Asegura el <strong>futuro digital de tu compañía</strong> con soluciones a medida!
             </p>
-            <a href="formulario.html" class="cta-button-animated bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors text-lg font-semibold inline-block">Solicita una Consulta Gratuita de Seguridad</a>
+ 
+            <a href="formulario.html" class="cta-button-animated bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors text-lg font-semibold inline-block animate__animated animate__zoomIn animate__delay-1s">Solicita una Consulta Gratuita de Seguridad</a>
         </div>
     </section>
 
     <section id="services" class="py-12 md:py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16">Soluciones Expertas en Ciberseguridad y Hacking Ético</h2>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16 animate__animated animate__fadeInUp">Soluciones Expertas en Ciberseguridad y Hacking Ético</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-12 animate__animated animate__fadeInUp animate__delay-0.2s">
                 Descubre cómo nuestros servicios especializados pueden fortalecer las defensas de tu empresa contra las ciberamenazas más sofisticadas. Desde auditorías exhaustivas hasta formación de personal, te cubrimos.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <a href="https://www.isaca.org/resources/it-audit" title="Más sobre Auditorías de Seguridad IT por ISACA" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://www.isaca.org/resources/it-audit" title="Más sobre Auditorías de Seguridad IT por ISACA" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-0.4s">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-shield-alt fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Auditorías de Seguridad Informática</h3>
@@ -331,7 +305,7 @@
                     </article>
                 </a>
 
-                <a href="https://owasp.org/www-project-penetration-testing-methodologies/" title="Metodologías de Pruebas de Penetración por OWASP" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://owasp.org/www-project-penetration-testing-methodologies/" title="Metodologías de Pruebas de Penetración por OWASP" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-0.6s">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-search fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Pruebas de Penetración (Pentesting)</h3>
@@ -340,7 +314,7 @@
                     </article>
                 </a>
 
-                <a href="https://www.incibe.es/empresas/servicios-ciberseguridad" title="Servicios de Ciberseguridad para Empresas por INCIBE" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://www.incibe.es/empresas/servicios-ciberseguridad" title="Servicios de Ciberseguridad para Empresas por INCIBE" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-0.8s">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-users fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Consultoría en Ciberseguridad Empresarial</h3>
@@ -349,7 +323,7 @@
                     </article>
                 </a>
 
-                <a href="https://gdpr.eu/what-is-gdpr/" title="Información sobre el Reglamento General de Protección de Datos (RGPD)" target="_blank" rel="noopener noreferrer" class="service-card-link group"> 
+                <a href="https://gdpr.eu/what-is-gdpr/" title="Información sobre el Reglamento General de Protección de Datos (RGPD)" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-1s"> 
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-lock fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Protección de Datos y Cumplimiento</h3>
@@ -358,7 +332,7 @@
                     </article>
                 </a>
 
-                <a href="https://www.sans.org/security-awareness-training/" title="Entrenamiento en Concienciación de Seguridad por SANS" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://www.sans.org/security-awareness-training/" title="Entrenamiento en Concienciación de Seguridad por SANS" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-1.2s">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-graduation-cap fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Formación y Concienciación en Ciberseguridad</h3>
@@ -367,7 +341,7 @@
                     </article>
                 </a>
 
-                <a href="https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final" title="Guía de Manejo de Incidentes de Seguridad por NIST" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" title="Guía de Manejo de Incidentes de Seguridad por NIST" target="_blank" rel="noopener noreferrer" class="service-card-link group animate__animated animate__fadeInUp animate__delay-1.4s">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-laptop-code fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Análisis Forense Digital e Incidentes</h3>
@@ -380,7 +354,7 @@
     </section>
 
     <section id="about" class="py-12 md:py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center max-w-3xl">
+        <div class="container mx-auto px-6 text-center max-w-3xl animate__animated animate__fadeInLeft">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Acerca de Shield Cyber Fortress: Tus Aliados en Ciberseguridad</h2>
             <p class="text-lg text-gray-700 mb-4">
                 Con más de una década de experiencia en la vanguardia de la <strong>ciberseguridad y el hacking ético</strong>, Shield Cyber Fortress se erige como tu socio estratégico en la protección de activos digitales. Nuestro equipo de <strong>expertos certificados en seguridad informática</strong> se dedica a ofrecer soluciones robustas y personalizadas que garantizan la integridad, confidencialidad y disponibilidad de tu información.
@@ -393,24 +367,24 @@
 
     <section id="features" class="py-12 md:py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16">¿Por Qué Elegir Shield Cyber Fortress?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16 animate__animated animate__fadeInRight">¿Por Qué Elegir Shield Cyber Fortress?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp">
                     <i class="fas fa-medal fa-3x text-orange-500 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Experiencia Comprobada</h3>
                     <p class="text-gray-700">Más de 10 años protegiendo empresas como la tuya con éxito.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.2s">
                     <i class="fas fa-user-secret fa-3x text-orange-500 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Hacking Ético Avanzado</h3>
                     <p class="text-gray-700">Identificamos vulnerabilidades antes que los ciberdelincuentes.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.4s">
                     <i class="fas fa-cogs fa-3x text-orange-500 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Soluciones Personalizadas</h3>
                     <p class="text-gray-700">Adaptamos nuestros servicios de ciberseguridad a tus necesidades.</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.6s">
                     <i class="fas fa-check-circle fa-3x text-orange-500 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Resultados Medibles</h3>
                     <p class="text-gray-700">Clientes satisfechos y negocios protegidos eficazmente.</p>
@@ -422,11 +396,11 @@
     <section id="testimonials" class="py-12 md:py-20 bg-gray-200">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4 animate__animated animate__fadeInUp">Lo Que Dicen Nuestros Clientes</h2>
-            <p class="text-lg text-gray-700 text-center mb-10 md:mb-16 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-0.5s">La confianza y satisfacción de nuestros clientes son nuestro mayor aval. Lee sus experiencias con nuestros servicios de ciberseguridad.</p>
+            <p class="text-lg text-gray-700 text-center mb-10 md:mb-16 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-0.2s">La confianza y satisfacción de nuestros clientes son nuestro mayor aval. Lee sus experiencias con nuestros servicios de ciberseguridad.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-0.4s"> 
                     <p class="testimonial-text">
                         "Estaba en una situación muy compleja, mi teléfono parecía hackeado y, trabajando para el gobierno, la seguridad de mis datos era primordial. El equipo de Shield Cyber Fortress fue increíblemente profesional y amable, resolvieron el problema eficazmente. ¡Me salvaron de un posible desastre!"
                     </p>
@@ -439,7 +413,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.2s">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-0.6s">
                     <p class="testimonial-text">
                         "Increíblemente agradecido con Shield Cyber Fortress. Resolvieron un caso de localización que nadie más pudo, siempre con profesionalismo, habilidad y total confidencialidad. Superaron todas mis expectativas."
                     </p>
@@ -452,7 +426,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.4s">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-0.8s">
                     <p class="testimonial-text">
                         "Tenía serias preocupaciones sobre la fidelidad de mi esposo. Acudir a Shield Cyber Fortress fue la mejor decisión. Me ayudaron a descubrir la verdad, confirmar mis sospechas y pude confrontar la situación con valentía. Gracias por su discreción y efectividad."
                     </p>
@@ -465,7 +439,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.6s">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-1s">
                     <p class="testimonial-text">
                         "Como dueña de una PYME, la ciberseguridad siempre me pareció un tema abrumador. Shield Cyber Fortress no solo simplificó el proceso, sino que su auditoría proactiva identificó vulnerabilidades que ni siquiera sabíamos que existían. Su equipo es profesional, claro en sus explicaciones y nos ha dado la tranquilidad que necesitábamos. ¡Totalmente recomendados!"
                     </p>
@@ -478,7 +452,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.8s">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-1.2s">
                     <p class="testimonial-text">
                         "La capacitación en concienciación de ciberseguridad que Shield Cyber Fortress impartió a nuestro personal fue excepcional. Lograron que un tema complejo fuera accesible y relevante para todos. Hemos visto una disminución notable en incidentes relacionados con phishing desde entonces. Su enfoque en la formación es invaluable."
                     </p>
@@ -491,7 +465,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-1s">
+                <div class="testimonial-card-custom animate__animated animate__fadeInUp animate__delay-1.4s">
                     <p class="testimonial-text">
                         "Manejar los datos de miles de clientes online requiere el más alto nivel de seguridad. Shield Cyber Fortress nos ayudó a fortalecer nuestras defensas y a asegurar el cumplimiento normativo en protección de datos. Su prueba de penetración fue exhaustiva y nos dio una hoja de ruta clara para mejorar. Ahora operamos con mucha más confianza."
                     </p>
@@ -509,7 +483,7 @@
 
     <section id="contact" class="py-12 md:py-20 bg-slate-50">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-10 md:mb-16">
+            <div class="text-center mb-10 md:mb-16 animate__animated animate__fadeInUp">
                 <h2 class="text-3xl md:text-4xl font-bold contact-section-title-custom"> 
                     <strong>Contacta con Expertos en Ciberseguridad</strong>
                 </h2>
@@ -518,7 +492,7 @@
                 </p>
             </div>
             <div class="flex flex-wrap justify-center -mx-4">
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0 animate__animated animate__fadeInLeft animate__delay-0.2s">
                     <div class="contact-card-custom shadow-lg rounded-lg p-6 h-full">
                         <div class="contact-card-wrapper-responsive flex items-center mb-6">
                             <div class="contact-icon-wrapper-responsive icon-wrapper mr-4">
@@ -557,7 +531,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 lg:w-2/3 px-4">
+                <div class="w-full md:w-1/2 lg:w-2/3 px-4 animate__animated animate__fadeInRight animate__delay-0.4s">
                     <div aria-label="Mapa de nuestra ubicación en Bogotá, Colombia" class="h-[300px] md:h-full rounded-lg overflow-hidden shadow-lg">
                         <iframe class="w-full h-full border-0" title="Ubicación de Shield Cyber Fortress en Google Maps" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNveGQ9bfpKFwWzQLLftrR9hNiHwdqQG8&q=Calle%2023%20No.%2012-23%20Bogota%20Colombia">
@@ -654,10 +628,8 @@
         if (contactFormModal) {
             contactFormModal.addEventListener('submit', function(event) {
                 const submitButton = document.getElementById('modalSubmitButton');
-                const originalButtonText = submitButton.innerHTML; // No es necesario si FormSubmit maneja todo
                 submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
                 submitButton.disabled = true;
-                // Si FormSubmit maneja la redirección, no necesitas revertir el botón aquí.
             });
         }
 
@@ -669,6 +641,12 @@
                 }
                 const backdrops = document.querySelectorAll('.modal-backdrop');
                 backdrops.forEach(backdrop => backdrop.remove());
+                 // Restaurar botón del modal si es necesario tras cierre manual o con 'esc'
+                const modalSubmitBtn = document.getElementById('modalSubmitButton');
+                if(modalSubmitBtn && modalSubmitBtn.disabled) { // Solo si estaba deshabilitado
+                    modalSubmitBtn.innerHTML = 'Enviar Mensaje';
+                    modalSubmitBtn.disabled = false;
+                }
             });
             
             window.addEventListener('popstate', function () {
@@ -677,7 +655,7 @@
                     if (openModal) {
                          const modalInstance = bootstrap.Modal.getInstance(openModal);
                          if (modalInstance) {
-                            modalInstance.hide();
+                            modalInstance.hide(); // Esto disparará 'hidden.bs.modal' para la limpieza
                          }
                     }
                 }
