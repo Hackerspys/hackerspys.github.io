@@ -95,7 +95,22 @@
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
-        .service-card-custom:hover { transform: translateY(-5px); }
+        
+        .service-card-link { /* Nueva clase para el enlace que envuelve la tarjeta */
+            display: block; /* Hace que el enlace ocupe todo el espacio de la tarjeta */
+            text-decoration: none; /* Quita el subrayado por defecto del enlace */
+            color: inherit; /* Hereda el color del texto de su padre */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Transiciones originales de la tarjeta */
+        }
+        .service-card-link:hover .service-card-custom { /* Aplicar hover al contenido de la tarjeta cuando el enlace tiene hover */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* Sombra más pronunciada al hacer hover */
+        }
+        .service-card-custom {
+             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Transiciones base de la tarjeta */
+        }
+
+
         .testimonial-card-custom:hover { transform: translateY(-3px); }
 
         .contact-section-title-custom {
@@ -172,36 +187,60 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10 md:mb-16">Servicios Especializados en Ciberseguridad y Hacking Ético</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-shield-alt fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Auditorías de Seguridad</h3>
-                    <p class="text-gray-700">Identificamos <strong>vulnerabilidades críticas</strong> y prevenimos <strong>ataques informáticos</strong>.</p>
-                </div>
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-search fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Pruebas de Penetración</h3>
-                    <p class="text-gray-700">Simulamos <strong>ataques reales</strong> para evaluar la <strong>seguridad de tu infraestructura</strong>.</p>
-                </div>
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-users fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Consultoría Especializada</h3>
-                    <p class="text-gray-700">Diseñamos <strong>estrategias de seguridad personalizadas</strong> para proteger tus datos.</p>
-                </div>
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-lock fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Protección de Datos</h3>
-                    <p class="text-gray-700">Aseguramos el <strong>cumplimiento normativo</strong> y la <strong>protección de datos</strong>.</p>
-                </div>
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-graduation-cap fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Formación y Concienciación</h3>
-                    <p class="text-gray-700">Fortalecemos la <strong>cultura de seguridad</strong> en tu organización.</p>
-                </div>
-                <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg transition-transform duration-300">
-                    <i class="fas fa-laptop-code fa-3x mb-4 text-orange-500"></i>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Análisis Forense Digital</h3>
-                    <p class="text-gray-700"><strong>Investigamos incidentes</strong> y definimos <strong>acciones de respuesta</strong>.</p>
-                </div>
+                
+                <a href="https://www.isaca.org/resources/it-audit" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">  
+                        <i class="fas fa-shield-alt fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Auditorías de Seguridad</h3>
+                        <p class="text-gray-700 flex-grow">Identificamos <strong>vulnerabilidades críticas</strong> y prevenimos <strong>ataques informáticos</strong>.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://owasp.org/www-project-penetration-testing-methodologies/" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
+                        <i class="fas fa-search fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Pruebas de Penetración</h3>
+                        <p class="text-gray-700 flex-grow">Simulamos <strong>ataques reales</strong> para evaluar la <strong>seguridad de tu infraestructura</strong>.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.incibe.es/empresas/servicios-ciberseguridad" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
+                        <i class="fas fa-users fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Consultoría Especializada</h3>
+                        <p class="text-gray-700 flex-grow">Diseñamos <strong>estrategias de seguridad personalizadas</strong> para proteger tus datos.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.privacyshield.gov/Program-Overview" target="_blank" rel="noopener noreferrer" class="service-card-link group">  
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
+                        <i class="fas fa-lock fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Protección de Datos</h3>
+                        <p class="text-gray-700 flex-grow">Aseguramos el <strong>cumplimiento normativo</strong> y la <strong>protección de datos</strong>.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.sans.org/security-awareness-training/" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
+                        <i class="fas fa-graduation-cap fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Formación y Concienciación</h3>
+                        <p class="text-gray-700 flex-grow">Fortalecemos la <strong>cultura de seguridad</strong> en tu organización.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                    <div class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
+                        <i class="fas fa-laptop-code fa-3x mb-4 text-orange-500"></i>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Análisis Forense Digital</h3>
+                        <p class="text-gray-700 flex-grow"><strong>Investigamos incidentes</strong> y definimos <strong>acciones de respuesta</strong>.</p>
+                        <span class="mt-4 text-sm text-orange-500 font-semibold group-hover:underline">Saber más <i class="fas fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -379,22 +418,22 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form id="contactForm">
+                    <form id="contactFormModal"> {/* Cambiado ID para diferenciar del formulario de la página 'formulario.html' */}
                         <div class="mb-3">
-                            <label for="name" class="form-label text-gray-700">Nombre Completo</label>
-                            <input type="text" class="form-control" id="name" name="name" required placeholder="Tu nombre">
+                            <label for="modalName" class="form-label text-gray-700">Nombre Completo</label>
+                            <input type="text" class="form-control" id="modalName" name="name" required placeholder="Tu nombre">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label text-gray-700">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="tu@email.com">
+                            <label for="modalEmail" class="form-label text-gray-700">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="modalEmail" name="email" required placeholder="tu@email.com">
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label text-gray-700">Teléfono (Opcional)</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Tu número de teléfono">
+                            <label for="modalPhone" class="form-label text-gray-700">Teléfono (Opcional)</label>
+                            <input type="tel" class="form-control" id="modalPhone" name="phone" placeholder="Tu número de teléfono">
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label text-gray-700">Mensaje</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="¿Cómo podemos ayudarte?"></textarea>
+                            <label for="modalMessage" class="form-label text-gray-700">Mensaje</label>
+                            <textarea class="form-control" id="modalMessage" name="message" rows="4" required placeholder="¿Cómo podemos ayudarte?"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                             Enviar Mensaje
@@ -425,7 +464,7 @@
             });
         });
         document.addEventListener('click', function(event) {
-            if (mobileMenuButton && mobileMenu) { // Ensure elements exist
+            if (mobileMenuButton && mobileMenu) { 
                 const isClickInsideMenu = mobileMenu.contains(event.target);
                 const isClickOnButton = mobileMenuButton.contains(event.target);
                 if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
@@ -434,12 +473,14 @@
             }
         });
 
-        // Contact Form Logic
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(event) {
+        // Contact Form Modal Logic (para el modal en index.html)
+        const contactFormModal = document.getElementById('contactFormModal'); // Usar el ID correcto
+        if (contactFormModal) {
+            contactFormModal.addEventListener('submit', function(event) {
                 event.preventDefault();
-                alert('Formulario enviado (simulación). Necesitarás un backend para procesar esto.');
+                // Aquí iría la lógica de envío para ESTE modal, si es diferente
+                // Por ejemplo, podría enviar a un endpoint diferente o tener campos diferentes
+                alert('Mensaje del modal enviado (simulación).');
                 const modalEl = document.getElementById('contactModal');
                 if (modalEl) {
                     const modalInstance = bootstrap.Modal.getInstance(modalEl);
@@ -447,18 +488,14 @@
                         modalInstance.hide();
                     }
                 }
-                contactForm.reset();
+                contactFormModal.reset();
             });
         }
 
         // Handle Bootstrap Modal "back" button issue
         const contactModalElement = document.getElementById('contactModal');
         if (contactModalElement) {
-            // Listener for when the modal is fully hidden
             contactModalElement.addEventListener('hidden.bs.modal', function () {
-                // If the body still has modal-open, it means the backdrop might be stuck
-                // This can happen if 'popstate' was triggered and hid the modal,
-                // but Bootstrap's internal state wasn't fully cleaned.
                 if (document.body.classList.contains('modal-open')) {
                     document.body.classList.remove('modal-open');
                 }
@@ -467,9 +504,8 @@
             });
             
             window.addEventListener('popstate', function () {
-                // Check if a Bootstrap modal is currently shown
                 if (document.body.classList.contains('modal-open')) {
-                    const openModal = document.querySelector('.modal.show');
+                    const openModal = document.querySelector('.modal.show'); // Podría ser cualquier modal
                     if (openModal) {
                          const modalInstance = bootstrap.Modal.getInstance(openModal);
                          if (modalInstance) {
@@ -482,4 +518,3 @@
     </script>
 </body>
 </html>
- 
