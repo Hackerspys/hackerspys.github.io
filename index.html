@@ -43,6 +43,9 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -58,6 +61,14 @@
                   500: '#f97316',
                   600: '#ea580c',
                 }
+              },
+              // Para delays de Animate.css si quieres más control
+              animationDelay: { 
+                '0.2s': '0.2s',
+                '0.4s': '0.4s',
+                '0.6s': '0.6s',
+                '0.8s': '0.8s',
+                '1s': '1s',
               }
             }
           }
@@ -80,7 +91,6 @@
             height: 80px; 
         }
         .hero-section {
-            /* Asegúrate que 'shield-cyber-fortress-hacking-etico-empresas.jpg' exista en assets/images/ */
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/shield-cyber-fortress-hacking-etico-empresas.jpg') no-repeat center center/cover; 
             overflow: visible;
         }
@@ -113,7 +123,70 @@
         .service-card-custom {
              transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
         }
-        .testimonial-card-custom:hover { transform: translateY(-3px); }
+
+        .testimonial-card-custom {
+            background-color: #fff; 
+            border-radius: 1rem; 
+            padding: 1.5rem; 
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            overflow: hidden; 
+        }
+        .testimonial-card-custom:before { 
+            content: '\f10d'; 
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 3.5rem; 
+            color: #f97316; 
+            opacity: 0.15; 
+            position: absolute;
+            top: 0.5rem;
+            left: 0.75rem;
+            z-index: 0;
+        }
+        .testimonial-card-custom:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        .testimonial-card-custom .testimonial-text {
+            font-size: 0.95rem; 
+            line-height: 1.6;
+            color: #4b5563; 
+            margin-bottom: 1.5rem; 
+            flex-grow: 1;
+            position: relative; 
+            z-index: 1;
+        }
+        .testimonial-card-custom .client-info { 
+            margin-top: auto; 
+            padding-top: 1rem; 
+            border-top: 1px solid #e5e7eb; 
+            display: flex;
+            align-items: center;
+            position: relative; 
+            z-index: 1;
+        }
+        .testimonial-card-custom .client-info img {
+            width: 3.5rem; 
+            height: 3.5rem; 
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 1rem; 
+            border: 2px solid #f97316; 
+        }
+        .testimonial-card-custom .client-name {
+            font-weight: 600; 
+            color: #1f2937; 
+            font-size: 1.05rem;
+        }
+        .testimonial-card-custom .client-position {
+            font-size: 0.85rem; 
+            color: #f97316; 
+        }
+
         .contact-section-title-custom {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #003366;
@@ -133,6 +206,15 @@
             .contact-icon-wrapper-responsive { margin-right: 0; margin-bottom: 1rem; }
             .contact-text-wrapper-responsive { text-align: center; }
         }
+        /* Clases de delay de Animate.css para Tailwind JIT (si no las genera por defecto) */
+        .animate__delay-0\.2s { animation-delay: 0.2s; }
+        .animate__delay-0\.4s { animation-delay: 0.4s; }
+        .animate__delay-0\.5s { animation-delay: 0.5s; } /* Para el párrafo del título de la sección */
+        .animate__delay-0\.6s { animation-delay: 0.6s; }
+        .animate__delay-0\.8s { animation-delay: 0.8s; }
+        .animate__delay-1s { animation-delay: 1s; }
+
+
     </style>
     
     <script type="application/ld+json">
@@ -219,11 +301,11 @@
 
     <section class="hero-section min-h-[85vh] flex items-center justify-center text-center text-white p-6 md:p-8" aria-labelledby="main-hero-title">
         <div class="max-w-3xl mx-auto">
-            <h1 id="main-hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate-fadeInUp">
+            <h1 id="main-hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate__animated animate__fadeInUp">
                 <span>Hacking Ético y Ciberseguridad</span><br class="sm:hidden">
                 <span>Profesional para tu Empresa</span>
             </h1>
-            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate-fadeInUp-delayed">
+            <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 animate__animated animate__fadeInUp-delayed">
                 En Shield Cyber Fortress, transformamos la seguridad de tu negocio. Con nuestros expertos en <strong>hacking ético para empresas</strong> y <strong>consultoría de ciberseguridad avanzada</strong>,
                 descubrimos y neutralizamos <strong>vulnerabilidades críticas</strong> antes de que se conviertan en costosas <strong>amenazas cibernéticas</strong>.
                 ¡Asegura el <strong>futuro digital de tu compañía</strong> con soluciones a medida!
@@ -285,7 +367,7 @@
                     </article>
                 </a>
 
-                <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" title="Guía de Manejo de Incidentes de Seguridad por NIST" target="_blank" rel="noopener noreferrer" class="service-card-link group">
+                <a href="https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final" title="Guía de Manejo de Incidentes de Seguridad por NIST" target="_blank" rel="noopener noreferrer" class="service-card-link group">
                     <article class="service-card-custom bg-gray-50 p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col">
                         <i class="fas fa-laptop-code fa-3x mb-4 text-orange-500"></i>
                         <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600">Análisis Forense Digital e Incidentes</h3>
@@ -339,45 +421,85 @@
 
     <section id="testimonials" class="py-12 md:py-20 bg-gray-200">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4">Lo Que Dicen Nuestros Clientes</h2>
-            <p class="text-lg text-gray-700 text-center mb-10 md:mb-16 max-w-2xl mx-auto">La confianza y satisfacción de nuestros clientes son nuestro mayor aval. Lee sus experiencias con nuestros servicios de ciberseguridad.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4 animate__animated animate__fadeInUp">Lo Que Dicen Nuestros Clientes</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 md:mb-16 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-0.5s">La confianza y satisfacción de nuestros clientes son nuestro mayor aval. Lee sus experiencias con nuestros servicios de ciberseguridad.</p>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
-                    <p class="text-gray-700 mb-4 flex-grow">
+                
+                <div class="testimonial-card-custom animate__animated animate__zoomIn">
+                    <p class="testimonial-text">
                         "Estaba en una situación muy compleja, mi teléfono parecía hackeado y, trabajando para el gobierno, la seguridad de mis datos era primordial. El equipo de Shield Cyber Fortress fue increíblemente profesional y amable, resolvieron el problema eficazmente. ¡Me salvaron de un posible desastre!"
                     </p>
-                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
-                         
-                        <img loading="lazy" alt="Carlos Aldana - Cliente Satisfecho de Shield Cyber Fortress" src="assets/images/foto.png" class="w-12 h-12 object-cover rounded-full mr-4">
+                    <div class="client-info">
+                        <img loading="lazy" alt="Carlos Aldana - Cliente Satisfecho de Shield Cyber Fortress" src="assets/images/foto.png" />
                         <div>
-                            <p class="font-semibold text-gray-900">Carlos Aldana</p>
-                            <p class="text-sm text-gray-600">Funcionario Gubernamental</p>
+                            <p class="client-name">Carlos Aldana</p>
+                            <p class="client-position">Funcionario Gubernamental</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
-                    <p class="text-gray-700 mb-4 flex-grow">
+
+                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.2s">
+                    <p class="testimonial-text">
                         "Increíblemente agradecido con Shield Cyber Fortress. Resolvieron un caso de localización que nadie más pudo, siempre con profesionalismo, habilidad y total confidencialidad. Superaron todas mis expectativas."
                     </p>
-                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
-                         
-                        <img loading="lazy" alt="Andrés Rincón - Cliente de Hacking Ético" src="assets/images/mbr-20.jpg" class="w-12 h-12 object-cover rounded-full mr-4">
+                    <div class="client-info">
+                        <img loading="lazy" alt="Andrés Rincón - Cliente de Hacking Ético" src="assets/images/mbr-20.jpg" />
                         <div>
-                            <p class="font-semibold text-gray-900">Andrés Rincón</p>
-                            <p class="text-sm text-gray-600">Empresario</p>
+                            <p class="client-name">Andrés Rincón</p>
+                            <p class="client-position">Empresario</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card-custom bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 flex flex-col">
-                    <p class="text-gray-700 mb-4 flex-grow">
+
+                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.4s">
+                    <p class="testimonial-text">
                         "Tenía serias preocupaciones sobre la fidelidad de mi esposo. Acudir a Shield Cyber Fortress fue la mejor decisión. Me ayudaron a descubrir la verdad, confirmar mis sospechas y pude confrontar la situación con valentía. Gracias por su discreción y efectividad."
                     </p>
-                    <div class="flex items-center mt-auto pt-4 border-t border-gray-200">
-                         
-                        <img loading="lazy" alt="Yeimi Giraldo - Cliente Satisfecha" src="assets/images/foto3.jpg" class="w-12 h-12 object-cover rounded-full mr-4">
+                    <div class="client-info">
+                        <img loading="lazy" alt="Yeimi Giraldo - Cliente Satisfecha" src="assets/images/foto3.jpg" />
                         <div>
-                            <p class="font-semibold text-gray-900">Yeimi Giraldo</p>
-                            <p class="text-sm text-gray-600">Cliente Particular</p>
+                            <p class="client-name">Yeimi Giraldo</p>
+                            <p class="client-position">Cliente Particular</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.6s">
+                    <p class="testimonial-text">
+                        "Como dueña de una PYME, la ciberseguridad siempre me pareció un tema abrumador. Shield Cyber Fortress no solo simplificó el proceso, sino que su auditoría proactiva identificó vulnerabilidades que ni siquiera sabíamos que existían. Su equipo es profesional, claro en sus explicaciones y nos ha dado la tranquilidad que necesitábamos. ¡Totalmente recomendados!"
+                    </p>
+                    <div class="client-info">
+                        <img loading="lazy" alt="Sofía Vargas - Dueña de TechNova Soluciones" src="assets/images/AA.png" />
+                        <div>
+                            <p class="client-name">Sofía Vargas</p>
+                            <p class="client-position">Dueña, TechNova Soluciones</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-0.8s">
+                    <p class="testimonial-text">
+                        "La capacitación en concienciación de ciberseguridad que Shield Cyber Fortress impartió a nuestro personal fue excepcional. Lograron que un tema complejo fuera accesible y relevante para todos. Hemos visto una disminución notable en incidentes relacionados con phishing desde entonces. Su enfoque en la formación es invaluable."
+                    </p>
+                    <div class="client-info">
+                        <img loading="lazy" alt="Dr. Alejandro Mendoza - Director de TI" src="assets/images/mbr-13.jpeg" />
+                        <div>
+                            <p class="client-name">Dr. Alejandro Mendoza</p>
+                            <p class="client-position">Director TI, Instituto Educativo Vanguardia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card-custom animate__animated animate__zoomIn animate__delay-1s">
+                    <p class="testimonial-text">
+                        "Manejar los datos de miles de clientes online requiere el más alto nivel de seguridad. Shield Cyber Fortress nos ayudó a fortalecer nuestras defensas y a asegurar el cumplimiento normativo en protección de datos. Su prueba de penetración fue exhaustiva y nos dio una hoja de ruta clara para mejorar. Ahora operamos con mucha más confianza."
+                    </p>
+                    <div class="client-info">
+                        <img loading="lazy" alt="Laura Jimenez - Gerente E-commerce" src="assets/images/COMERSIO.png" />
+                        <div>
+                            <p class="client-name">Laura Jimenez</p>
+                            <p class="client-position">Gerente E-commerce, ModaGlobal Online</p>
                         </div>
                     </div>
                 </div>
@@ -532,10 +654,10 @@
         if (contactFormModal) {
             contactFormModal.addEventListener('submit', function(event) {
                 const submitButton = document.getElementById('modalSubmitButton');
-                const originalButtonText = submitButton.innerHTML;
+                const originalButtonText = submitButton.innerHTML; // No es necesario si FormSubmit maneja todo
                 submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
                 submitButton.disabled = true;
-                // La redirección la maneja FormSubmit debido al 'action' en el form.
+                // Si FormSubmit maneja la redirección, no necesitas revertir el botón aquí.
             });
         }
 
