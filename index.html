@@ -43,7 +43,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- Animate.css (Lo necesitarás si usas sus clases directamente) -->
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Tailwind CSS -->
@@ -122,9 +122,9 @@
             padding: 1.5rem; 
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); 
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            display: flex; /* Clave para alinear contenido interno */
-            flex-direction: column; /* Apila elementos verticalmente */
-            height: 100%; /* Para que todas las tarjetas en una fila de la cuadrícula intenten tener la misma altura */
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
         }
         .testimonial-card-custom:hover { 
             transform: translateY(-5px); 
@@ -133,11 +133,11 @@
         .testimonial-card-custom .testimonial-text {
             color: #4b5563; 
             margin-bottom: 1rem; 
-            flex-grow: 1; /* Esto hace que el texto ocupe el espacio disponible, empujando client-info hacia abajo */
+            flex-grow: 1; 
             line-height: 1.6;
         }
         .testimonial-card-custom .client-info { 
-            margin-top: auto; /* Empuja esta sección al final de la tarjeta */
+            margin-top: auto; 
             padding-top: 1rem; 
             border-top: 1px solid #e5e7eb; 
             display: flex;
@@ -178,10 +178,10 @@
             .contact-icon-wrapper-responsive { margin-right: 0; margin-bottom: 1rem; }
             .contact-text-wrapper-responsive { text-align: center; }
         }
-        /* Clases de delay para Animate.css (si se usan) */
+        /* Clases de delay estándar de Animate.css (se activarán si están en los elementos) */
         .animate__delay-0\.2s { animation-delay: 0.2s; }
         .animate__delay-0\.4s { animation-delay: 0.4s; }
-        .animate__delay-0\.5s { animation-delay: 0.5s; } /* Para el párrafo del título de la sección Hero */
+        .animate__delay-0\.5s { animation-delay: 0.5s; } 
         .animate__delay-0\.6s { animation-delay: 0.6s; }
         .animate__delay-0\.8s { animation-delay: 0.8s; }
         .animate__delay-1s { animation-delay: 1s; }
@@ -273,7 +273,6 @@
 
     <section class="hero-section min-h-[85vh] flex items-center justify-center text-center text-white p-6 md:p-8" aria-labelledby="main-hero-title">
         <div class="max-w-3xl mx-auto">
- 
             <h1 id="main-hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate-fadeInUp">
                 <span>Hacking Ético y Ciberseguridad</span><br class="sm:hidden">
                 <span>Profesional para tu Empresa</span>
@@ -283,7 +282,6 @@
                 descubrimos y neutralizamos <strong>vulnerabilidades críticas</strong> antes de que se conviertan en costosas <strong>amenazas cibernéticas</strong>.
                 ¡Asegura el <strong>futuro digital de tu compañía</strong> con soluciones a medida!
             </p>
- 
             <a href="formulario.html" class="cta-button-animated bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors text-lg font-semibold inline-block animate__animated animate__zoomIn animate__delay-1s">Solicita una Consulta Gratuita de Seguridad</a>
         </div>
     </section>
@@ -371,23 +369,35 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp">
                     <i class="fas fa-medal fa-3x text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Experiencia Comprobada</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="experiencia-comprobada.html" class="hover:text-orange-600 transition-colors">Experiencia Comprobada</a>
+                    </h3>
                     <p class="text-gray-700">Más de 10 años protegiendo empresas como la tuya con éxito.</p>
+                    <a href="experiencia-comprobada.html" class="text-orange-500 hover:text-orange-600 font-medium mt-3 inline-block">Leer más <i class="fas fa-arrow-right text-xs ml-1"></i></a>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.2s">
                     <i class="fas fa-user-secret fa-3x text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hacking Ético Avanzado</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="hacking-etico-avanzado.html" class="hover:text-orange-600 transition-colors">Hacking Ético Avanzado</a>
+                    </h3>
                     <p class="text-gray-700">Identificamos vulnerabilidades antes que los ciberdelincuentes.</p>
+                    <a href="hacking-etico-avanzado.html" class="text-orange-500 hover:text-orange-600 font-medium mt-3 inline-block">Leer más <i class="fas fa-arrow-right text-xs ml-1"></i></a>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.4s">
                     <i class="fas fa-cogs fa-3x text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Soluciones Personalizadas</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="soluciones-personalizadas.html" class="hover:text-orange-600 transition-colors">Soluciones Personalizadas</a>
+                    </h3>
                     <p class="text-gray-700">Adaptamos nuestros servicios de ciberseguridad a tus necesidades.</p>
+                    <a href="soluciones-personalizadas.html" class="text-orange-500 hover:text-orange-600 font-medium mt-3 inline-block">Leer más <i class="fas fa-arrow-right text-xs ml-1"></i></a>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md animate__animated animate__fadeInUp animate__delay-0.6s">
                     <i class="fas fa-check-circle fa-3x text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Resultados Medibles</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                        <a href="resultados-medibles.html" class="hover:text-orange-600 transition-colors">Resultados Medibles</a>
+                    </h3>
                     <p class="text-gray-700">Clientes satisfechos y negocios protegidos eficazmente.</p>
+                    <a href="resultados-medibles.html" class="text-orange-500 hover:text-orange-600 font-medium mt-3 inline-block">Leer más <i class="fas fa-arrow-right text-xs ml-1"></i></a>
                 </div>
             </div>
         </div>
@@ -641,9 +651,8 @@
                 }
                 const backdrops = document.querySelectorAll('.modal-backdrop');
                 backdrops.forEach(backdrop => backdrop.remove());
-                 // Restaurar botón del modal si es necesario tras cierre manual o con 'esc'
                 const modalSubmitBtn = document.getElementById('modalSubmitButton');
-                if(modalSubmitBtn && modalSubmitBtn.disabled) { // Solo si estaba deshabilitado
+                if(modalSubmitBtn && modalSubmitBtn.disabled) { 
                     modalSubmitBtn.innerHTML = 'Enviar Mensaje';
                     modalSubmitBtn.disabled = false;
                 }
@@ -655,7 +664,7 @@
                     if (openModal) {
                          const modalInstance = bootstrap.Modal.getInstance(openModal);
                          if (modalInstance) {
-                            modalInstance.hide(); // Esto disparará 'hidden.bs.modal' para la limpieza
+                            modalInstance.hide(); 
                          }
                     }
                 }
